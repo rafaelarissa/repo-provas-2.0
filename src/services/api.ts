@@ -92,12 +92,18 @@ async function getCategories(token: string) {
   return baseAPI.get<{ categories: Category[] }>("/categories", config);
 }
 
+async function setTest(token: string) {
+  const config = getConfig(token);
+  return baseAPI.post<{ tests: Test[] }>("/adicionar", config);
+}
+
 const api = {
   signUp,
   signIn,
   getTestsByDiscipline,
   getTestsByTeacher,
   getCategories,
+  setTest,
 };
 
 export default api;

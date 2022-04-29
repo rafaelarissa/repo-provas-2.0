@@ -10,6 +10,8 @@ import Disciplines from "./pages/Disciplines";
 import Instructors from "./pages/Instructors";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import AddTests from "./pages/AddTests";
+
 
 function App() {
   const theme = createTheme({
@@ -33,6 +35,10 @@ function App() {
                 <Route
                   path="/app/pessoas-instrutoras"
                   element={<Instructors />}
+                />
+                <Route
+                  path="/app/adicionar"
+                  element={<AddTests />}
                 />
               </Route>
             </Routes>
