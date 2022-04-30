@@ -15,7 +15,7 @@ import { Link as RouterLink, useNavigate } from "react-router-dom";
 import Form from "../components/Form";
 import useAuth from "../hooks/useAuth";
 import api, {
-  Category,
+  Category, Discipline,
 } from "../services/api";
 
 const styles = {
@@ -70,6 +70,7 @@ function AddTests(){
   const navigate = useNavigate();
   const { token } = useAuth();
   const [categories, setCategories] = useState<Category[]>([]);
+  const [disciplines, setDisciplines] = useState<Discipline[]>([]);
   const [formData, setFormData] = useState<FormData>({
     testName: "",
     pdfUrl: "",
