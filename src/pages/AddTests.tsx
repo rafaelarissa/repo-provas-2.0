@@ -85,6 +85,8 @@ function AddTests(){
 
       const { data: categoriesData } = await api.getCategories(token);
       setCategories(categoriesData.categories);
+      const { data: disciplinesData } = await api.getDisciplines(token);
+      setDisciplines(disciplinesData.disciplines);
     }
     loadPage();
   }, [token]);
@@ -99,6 +101,13 @@ function AddTests(){
     return {
       id: category.id,
       label: category.name
+    };
+  });
+
+  const disciplinesOptions = disciplines?.map((discipline) => {
+    return {
+      id: discipline.id,
+      label: discipline.name
     };
   });
 
@@ -169,7 +178,7 @@ function AddTests(){
         <Autocomplete
           disablePortal
           id="combo-box-demo"
-          options={disciplines}
+          options={disciplinesOptions}
           sx={styles.input}
           renderInput={(params) => <TextField {...params} label="Disciplina" />}
         />
